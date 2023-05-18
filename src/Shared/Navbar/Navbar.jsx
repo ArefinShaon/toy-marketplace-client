@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import logo from '../../assets/SHTS_Logo_Edited_410x.png'
+import logo from '../../assets/toyman_d3aab1e4-a273-4b68-a0c8-9b6f6e6282c2_190x.png'
 import { useContext } from "react";
 import { AuthContext } from "../../Pages/Context/AuthProvider";
 
-
+import { FaUser,  } from "react-icons/fa";
 
 const NavBar = () => {
 
@@ -15,18 +15,41 @@ const NavBar = () => {
         .catch( error => console.log(error))
     }
 
-    const navItems = <>
-        <li><Link to="/">Home</Link> </li>
-        <li> <Link to="/about">About</Link> </li>
-        { user?.email ?  <>
-            <li><Link to="/bookings">My Bookings</Link></li>
-            <li><button onClick={handleLogOut}>Log out</button></li>
-        </> 
-        : <li> <Link to="/login">Login</Link> </li>
-       }
-    </>
+    const navItems = (
+        <>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/about">About</Link></li>
+          <li><Link to="/blog">Blog</Link></li>
+          <li><Link to="/all-toy">All Toys</Link></li>
+          {user?.email ? (
+            <>
+              <li><Link to="/add-toy">Add Toys</Link></li>
+              <li><Link to="/my-toy">My Toys</Link></li>
+                    <li><button onClick={handleLogOut}>Log out</button></li>
+                    <li className="nav-item-user">
+                
+                <span className="tooltip">
+                {user.photoURL ? (
+                  <img
+                    className="rounded-full w-12 mx-2"
+                    src={user.photoURL}
+                    alt=""
+                    title={user.displayName}
+                  />
+                ) : (
+                  <FaUser className="rounded-full w-12 mx-2" />
+                )}
+              </span>
+                
+              </li>
+            </>
+          ) : (
+            <li><Link to="/login">Login</Link></li>
+          )}
+        </>
+      );
     return (
-        <div className="navbar bg-cyan-100">
+        <div className="navbar fixed top-0 z-50 bg-cyan-100 mb-8">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -46,7 +69,7 @@ const NavBar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-            <button className="btn btn-outline btn-warning">hhh</button>
+            <button className="btn btn-outline btn-error">Place Order</button>
             </div>
         </div>
     );
