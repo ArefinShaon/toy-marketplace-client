@@ -20,11 +20,11 @@ const NavBar = () => {
           <li><Link to="/">Home</Link></li>
           <li><Link to="/about">About</Link></li>
           <li><Link to="/blog">Blog</Link></li>
-          <li><Link to="/all-toy">All Toys</Link></li>
+          <li><Link to="/allToy">All Toys</Link></li>
           {user?.email ? (
             <>
-              <li><Link to="/add-toy">Add Toys</Link></li>
-              <li><Link to="/my-toy">My Toys</Link></li>
+              <li><Link to="/addToy">Add Toys</Link></li>
+              <li><Link to="/myToy">My Toys</Link></li>
                     <li><button onClick={handleLogOut}>Log out</button></li>
                     <li className="nav-item-user">
                 
