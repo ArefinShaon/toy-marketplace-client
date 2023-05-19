@@ -22,6 +22,24 @@ const MyToys = () => {
       });
   }, [url]);
 
+  const handleDelete = id => {
+    const proceed = confirm('Are You sure you want to delete');
+    if (proceed) {
+        fetch(`http://localhost:5000/addtoys/${id}`, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.deletedCount > 0) {
+                    alert('deleted successful');
+                    const remaining = myToys.filter(myToy => myToy._id !== id);
+                    setMyToys(remaining);
+                }
+            })
+    }
+}
+
   if (loading) {
     return (
       <div className="flex justify-center items-center h-screen">
@@ -57,6 +75,7 @@ const MyToys = () => {
               <MyToysRow
                 key={toy._id}
                 toy={toy}
+                handleDelete={handleDelete}
               ></MyToysRow>
             ))}
           </tbody>
