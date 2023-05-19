@@ -1,4 +1,5 @@
 import Banner from "../Banner/Banner";
+import GallerySection from "../GallerySection/GallerySection";
 
 
 
@@ -7,7 +8,7 @@ const Home = () => {
     return (
         <div className="mt-12">
             <Banner></Banner>
-            <h2>This is home</h2>
+            <GallerySection></GallerySection>
            
         </div>
     );

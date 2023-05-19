@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../Context/AuthProvider";
 import img1 from "../../assets/gettyimages-878844026-612x612.jpg";
+import swal from 'sweetalert';
 
 const AddToys = () => {
   const { user } = useContext(AuthContext);
@@ -46,7 +47,7 @@ const AddToys = () => {
       .then((data) => {
         console.log(data);
         if (data.insertedId) {
-          alert("service book successfully");
+          swal("Good job!", "Successfully Add a Toy", "success");
         }
       });
     event.target.reset();
