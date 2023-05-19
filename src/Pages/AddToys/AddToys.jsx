@@ -109,7 +109,7 @@ const AddToys = () => {
                   name="sellerName"
                   className="input"
                   defaultValue={user.displayName}
-                  readOnly
+                  required
                 />
               </div>
               <div className="mb-4">
@@ -122,7 +122,7 @@ const AddToys = () => {
                   name="sellerEmail"
                   className="input"
                   defaultValue={user.email}
-                  readOnly
+                  required
                 />
               </div>
             </div>
