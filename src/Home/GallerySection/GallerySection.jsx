@@ -15,6 +15,17 @@ import image10 from "../../assets/AAGE363AABI667-5_1600x.jpeg";
 const GallerySection = () => {
   const carouselRef = useRef(null);
 
+  function calculateCenterSlidePercentage() {
+  
+    if (window.innerWidth < 640) {
+      return 70;
+    } else if (window.innerWidth < 1024) {
+      return 25;
+    } else {
+      return 27;
+    }
+  }
+
   useEffect(() => {
     const interval = setInterval(() => {
     //   carouselRef.current.next();
@@ -37,7 +48,7 @@ const GallerySection = () => {
         showStatus={false}
         showIndicators={false}
         centerMode
-        centerSlidePercentage={23}
+        centerSlidePercentage={calculateCenterSlidePercentage()}
         itemClass="carousel-item-padding-40-px"
         interval={2000}
         stopOnHover={false}
