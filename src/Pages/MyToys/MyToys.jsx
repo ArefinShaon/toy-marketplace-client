@@ -1,11 +1,14 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Context/AuthProvider";
 import MyToysRow from "../MyToysRow/MyToysRow";
+import swal from "sweetalert";
+
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
   const [loading, setLoading] = useState(true);
+  
 
   const url = `http://localhost:5000/addtoys?email=${user?.email}`;
 
@@ -22,6 +25,43 @@ const MyToys = () => {
       });
   }, [url]);
 
+  const handleUpdate = (id, updatedData) => {
+    fetch(`http://localhost:5000/addtoys/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updatedData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.success) {
+          swal("Success!", "Toy updated successfully.", "success");
+          
+          // Update the local state or fetch the updated data from the server
+          setMyToys((prevMyToys) => {
+            const updatedToys = prevMyToys.map((toy) => {
+              if (toy._id === id) {
+                return {
+                  ...toy,
+                  ...updatedData,
+                };
+              }
+              return toy;
+            });
+            return updatedToys;
+          });
+        } else {
+          swal("Error!", "Failed to update the toy.", "error");
+        }
+      })
+      .catch((error) => {
+        console.error("Error updating toy:", error);
+        swal("Error!", "Failed to update the toy.", "error");
+      });
+  };
+  
   const handleDelete = id => {
     const proceed = confirm('Are You sure you want to delete');
     if (proceed) {
@@ -76,6 +116,7 @@ const MyToys = () => {
                 key={toy._id}
                 toy={toy}
                 handleDelete={handleDelete}
+                handleUpdate={handleUpdate}
               ></MyToysRow>
             ))}
           </tbody>
