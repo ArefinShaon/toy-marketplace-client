@@ -2,9 +2,9 @@ import  {  useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle, FaArrowRight} from "react-icons/fa";
 import {  GoogleAuthProvider } from "firebase/auth";
-
 import swal from 'sweetalert';
 import { AuthContext } from "../Context/AuthProvider";
+
 
 // For log in section
 const Login = () => {
