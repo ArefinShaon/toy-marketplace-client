@@ -1,3 +1,4 @@
+import ShopByCategory from "../../Pages/ShopByCategory/ShopByCategory";
 import Banner from "../Banner/Banner";
 import GallerySection from "../GallerySection/GallerySection";
 
@@ -9,7 +10,7 @@ const Home = () => {
         <div className="mt-12">
             <Banner></Banner>
             <GallerySection></GallerySection>
-           
+           <ShopByCategory></ShopByCategory>
         </div>
     );
 };
