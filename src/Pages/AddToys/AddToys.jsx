@@ -8,6 +8,49 @@ const AddToys = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     // Handle form submission and perform necessary actions
+      // Retrieve form data
+  const formData = new FormData(event.target);
+  const data = Object.fromEntries(formData.entries());
+
+  // Access the form data
+  const pictureUrl = data.pictureUrl;
+  const name = data.name;
+  const sellerName = data.sellerName;
+  const sellerEmail = data.sellerEmail;
+  const subCategory = data.subCategory;
+  const price = parseFloat(data.price);
+  const rating = parseFloat(data.rating);
+  const quantity = parseInt(data.quantity);
+      const description = data.description;
+      
+      const addToy = {
+        pictureUrl,
+        name,
+        sellerName,
+        sellerEmail,
+        subCategory,
+        price,
+        rating,
+        quantity,
+        description
+      };
+      console.log(addToy);
+      fetch('http://localhost:5000/addtoys', {
+        method: 'POST', 
+        headers: {
+            'content-type': 'application/json'
+        }, 
+        body: JSON.stringify(addToy)
+    })
+    .then(res => res.json())
+    .then(data => {
+        console.log(data);
+        if(data.insertedId){
+            alert('service book successfully')
+        }
+    })
+    event.target.reset();
+
   };
 
   return (
@@ -153,7 +196,10 @@ const AddToys = () => {
               className="input"
               required
             ></textarea>
-          </div>
+              </div>
+              <div className="form-control mt-6">
+                    <input className="btn btn-primary btn-block" type="submit" value="Add Toy" />
+                </div>
       </form>
     </div>
   );
