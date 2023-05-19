@@ -200,7 +200,7 @@ const AddToys = () => {
         </div>
         <div className="form-control mt-6">
           <input
-            className="btn btn-primary bg-cyan-500 w-3/4 mx-auto btn-block"
+            className="btn btn-primary bg-cyan-500 w-3/4 mx-auto"
             type="submit"
             value="Add Toy"
           />
