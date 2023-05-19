@@ -3,8 +3,8 @@ import img2 from "../../assets/slider_01_v3_bf417f92-1b8f-4c2d-aad5-dfc606c855df
 
 const Banner = () => {
   return (
-    <div className="carousel w-full mt-16">
-      <div id="slide1" className="carousel-item relative w-full">
+    <div className="carousel w-full mt-24">
+      <div id="slide1" className="carousel-item relative  w-full">
         <img src={img1} className="w-full" />
         <div className="absolute  flex items-center h-full left-0 top-0 ">
           <div className="text-center pl-20 lg:pl-48 py-4 w-full">

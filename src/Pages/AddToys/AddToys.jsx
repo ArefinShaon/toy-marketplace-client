@@ -8,49 +8,48 @@ const AddToys = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     // Handle form submission and perform necessary actions
-      // Retrieve form data
-  const formData = new FormData(event.target);
-  const data = Object.fromEntries(formData.entries());
+    // Retrieve form data
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData.entries());
 
-  // Access the form data
-  const pictureUrl = data.pictureUrl;
-  const name = data.name;
-  const sellerName = data.sellerName;
-  const sellerEmail = data.sellerEmail;
-  const subCategory = data.subCategory;
-  const price = parseFloat(data.price);
-  const rating = parseFloat(data.rating);
-  const quantity = parseInt(data.quantity);
-      const description = data.description;
-      
-      const addToy = {
-        pictureUrl,
-        name,
-        sellerName,
-        sellerEmail,
-        subCategory,
-        price,
-        rating,
-        quantity,
-        description
-      };
-      console.log(addToy);
-      fetch('http://localhost:5000/addtoys', {
-        method: 'POST', 
-        headers: {
-            'content-type': 'application/json'
-        }, 
-        body: JSON.stringify(addToy)
+    // Access the form data
+    const pictureUrl = data.pictureUrl;
+    const name = data.name;
+    const sellerName = data.sellerName;
+    const sellerEmail = data.sellerEmail;
+    const subCategory = data.subCategory;
+    const price = parseFloat(data.price);
+    const rating = parseFloat(data.rating);
+    const quantity = parseInt(data.quantity);
+    const description = data.description;
+
+    const addToy = {
+      pictureUrl,
+      name,
+      sellerName,
+      sellerEmail,
+      subCategory,
+      price,
+      rating,
+      quantity,
+      description,
+    };
+    console.log(addToy);
+    fetch("http://localhost:5000/addtoys", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(addToy),
     })
-    .then(res => res.json())
-    .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         console.log(data);
-        if(data.insertedId){
-            alert('service book successfully')
+        if (data.insertedId) {
+          alert("service book successfully");
         }
-    })
+      });
     event.target.reset();
-
   };
 
   return (
@@ -66,8 +65,9 @@ const AddToys = () => {
         onSubmit={handleSubmit}
         className="md:w-1/2 mx-auto md:mx-0 md:mt-0 mt-8 bg-cyan-50 p-8 text-center rounded shadow"
       >
-        <h2 className="md:text-5xl font-semibold md:mb-6 text-center text-xl p-6">
-          <span className="text-primary">Add</span> <span className="text-sky-400">A Toy</span>
+        <h2 className="md:text-5xl font-semibold md:mb-6 text-center text-2xl p-6">
+          <span className="text-primary">Add</span>{" "}
+          <span className="text-sky-400">A Toy</span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="mb-4">
@@ -152,27 +152,28 @@ const AddToys = () => {
               type="number"
               id="price"
               name="price"
-                          className="input"
-                          min="0"
+              className="input"
+              min="0"
               required
             />
           </div>
         </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="mb-4">
-          <label htmlFor="rating" className="block font-medium">
-            Rating
-          </label>
-          <input
-            type="number"
-            id="rating"
-            name="rating"
-                          className="input"
-                          min="0"
-            required
-          />
-        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="mb-4">
+            <label htmlFor="rating" className="block font-medium">
+              Rating
+            </label>
+            <input
+              type="number"
+              id="rating"
+              name="rating"
+              className="input"
+              min="0"
+              max="5"
+              required
+            />
+          </div>
+          <div className="mb-4 ">
             <label htmlFor="quantity" className="block font-medium">
               Available quantity
             </label>
@@ -180,26 +181,30 @@ const AddToys = () => {
               type="number"
               id="quantity"
               name="quantity"
-                          className="input"
-                          min="0"
+              className="input"
+              min="0"
               required
             />
           </div>
         </div>
-          <div className="mb-4 text-center">
-            <label htmlFor="description" className="block font-medium">
-              Detail description
-            </label>
-            <textarea
-              id="description"
-              name="description"
-              className="input"
-              required
-            ></textarea>
-              </div>
-              <div className="form-control mt-6">
-                    <input className="btn btn-primary btn-block" type="submit" value="Add Toy" />
-                </div>
+        <div className="mb-4 text-center">
+          <label htmlFor="description" className="block font-medium">
+            Detail description
+          </label>
+          <textarea
+            id="description"
+            name="description"
+            className="input w-full"
+            required
+          ></textarea>
+        </div>
+        <div className="form-control mt-6">
+          <input
+            className="btn btn-primary bg-cyan-500 w-3/4 mx-auto btn-block"
+            type="submit"
+            value="Add Toy"
+          />
+        </div>
       </form>
     </div>
   );
