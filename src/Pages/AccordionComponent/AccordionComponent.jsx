@@ -27,14 +27,14 @@ import {
         <div className="flex flex-col md:flex-row-reverse mt-8 justify-center px-8 gap-8 items-center">
           <div
             className="md:order-1"
-            data-aos="fade-up-right"
+            data-aos="fade-up"
             data-aos-delay="500"
           >
             <img src={img1} alt="" />
           </div>
           <Accordion
-            className="accordion border border-cyan-500 p-8 bg-cyan-50 rounded w-1/2"
-            data-aos="fade-up-left"
+            className="accordion border border-cyan-500 p-8 bg-cyan-50 rounded w-full lg:w-1/2"
+            data-aos="fade-up"
             data-aos-delay="500"
           >
             <AccordionItem className="accordion-item">

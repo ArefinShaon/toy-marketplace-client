@@ -5,7 +5,7 @@ import { FaShoppingCart } from "react-icons/fa";
 const Banner = () => {
   return (
     <div className="carousel w-full mt-22">
-      <div id="slide1" className="carousel-item relative  w-full">
+      <div id="slide1" className="carousel-item relative h-72 lg:h-full w-full">
         <img src={img1} className="w-full" />
         <div className="absolute  flex items-center h-full left-0 top-0 ">
           <div className="text-center pl-20 lg:pl-48 py-4 w-full">
@@ -31,7 +31,7 @@ const Banner = () => {
           </a>
         </div>
       </div>
-      <div id="slide2" className="carousel-item relative w-full">
+      <div id="slide2" className="carousel-item relative h-72 lg:h-full w-full">
         <img src={img2} className="w-full" />
         <div className="absolute  flex items-center h-full left-0 top-0 ">
           <div className="text-center pl-20 lg:pl-48 py-4 w-full">
