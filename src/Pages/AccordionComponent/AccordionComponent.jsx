@@ -33,7 +33,7 @@ import {
             <img src={img1} alt="" />
           </div>
           <Accordion
-            className="accordion border border-cyan-500 p-8 bg-cyan-50 rounded w-full lg:w-1/2"
+            className="accordion border border-cyan-500 p-8 bg-cyan-50 rounded w-full h-full lg:w-1/2"
             data-aos="fade-up"
             data-aos-delay="500"
           >

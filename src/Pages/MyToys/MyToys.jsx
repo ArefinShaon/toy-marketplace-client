@@ -10,7 +10,7 @@ const MyToys = () => {
   const [loading, setLoading] = useState(true);
   const [sortOrder, setSortOrder] = useState("asc");
  useTitle('My Toys')
-  const url = `http://localhost:5000/addtoys?email=${user?.email}&sort=${sortOrder}`;
+  const url = `https://toy-server-gold.vercel.app/addtoys?email=${user?.email}&sort=${sortOrder}`;
 
   useEffect(() => {
     fetch(url)
@@ -30,7 +30,7 @@ const MyToys = () => {
   };
 
   const handleUpdate = (id, updatedData) => {
-    fetch(`http://localhost:5000/addtoys/${id}`, {
+    fetch(`https://toy-server-gold.vercel.app/addtoys/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -69,7 +69,7 @@ const MyToys = () => {
   const handleDelete = id => {
     const proceed = confirm('Are You sure you want to delete');
     if (proceed) {
-        fetch(`http://localhost:5000/addtoys/${id}`, {
+        fetch(`https://toy-server-gold.vercel.app/addtoys/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

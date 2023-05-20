@@ -12,7 +12,7 @@ const ShopByCategory = () => {
       try {
         const category = getCategoryByTabIndex(activeTab);
         const response = await fetch(
-          `http://localhost:5000/addtoys?category=${category}`
+          `https://toy-server-gold.vercel.app/addtoys?category=${category}`
         );
         const data = await response.json();
         setCategoryData(data);
