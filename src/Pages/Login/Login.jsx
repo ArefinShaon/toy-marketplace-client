@@ -66,7 +66,7 @@ const Login = () => {
           <form onSubmit={handleSubmit} className="card-body">
             <div className="form-control">
               <h1 className="font-bold text-gray-500 text-3xl text-center my-6">
-                Login to see recipes
+                Login to view next
               </h1>
 
               <label className="label">
