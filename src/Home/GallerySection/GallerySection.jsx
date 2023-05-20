@@ -16,7 +16,6 @@ const GallerySection = () => {
   const carouselRef = useRef(null);
 
   function calculateCenterSlidePercentage() {
-  
     if (window.innerWidth < 640) {
       return 70;
     } else if (window.innerWidth < 1024) {
@@ -28,7 +27,7 @@ const GallerySection = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-    //   carouselRef.current.next();
+      //   carouselRef.current.next();
     }, 1000);
 
     return () => {
@@ -37,8 +36,10 @@ const GallerySection = () => {
   }, []);
 
   return (
-      <div className=" p-4 bg-cyan-50 rounded-xl">
-          <p className="text-2xl lg:text-5xl font-bold text-cyan-600 text-center m-4 p-4">TOY GALLERY</p>
+    <div className=" p-4 bg-cyan-50 rounded-xl">
+      <p className="text-2xl lg:text-5xl font-bold text-cyan-600 text-center m-4 p-4">
+        TOY GALLERY
+      </p>
       <Carousel
         ref={carouselRef}
         autoPlay
@@ -52,7 +53,6 @@ const GallerySection = () => {
         itemClass="carousel-item-padding-40-px"
         interval={2000}
         stopOnHover={false}
-        
       >
         <div className="border border-cyan-500 p-6 rounded-xl ">
           <img src={image1} alt="Image 1" />
