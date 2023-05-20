@@ -4,12 +4,13 @@ import { Link, useNavigate } from "react-router-dom";
 
 import swal from "sweetalert";
 import { AuthContext } from "../Context/AuthProvider";
+import useTitle from "../../hooks/useTitle";
 
 const SignUp = () => {
   const { createUser } = useContext(AuthContext);
   const [passwordError, setPasswordError] = useState("");
   const [success, setSuccess] = useState(false);
-
+ useTitle('Resister')
   const navigate = useNavigate();
 
   const handleSignUp = (event) => {

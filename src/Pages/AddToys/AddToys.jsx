@@ -2,10 +2,11 @@ import { useContext } from "react";
 import { AuthContext } from "../Context/AuthProvider";
 import img1 from "../../assets/gettyimages-878844026-612x612.jpg";
 import swal from 'sweetalert';
+import useTitle from "../../hooks/useTitle";
 
 const AddToys = () => {
   const { user } = useContext(AuthContext);
-
+ useTitle('Add Toy')
   const handleSubmit = (event) => {
     event.preventDefault();
     // Handle form submission and perform necessary actions

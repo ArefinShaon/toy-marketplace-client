@@ -1,12 +1,13 @@
 import  { useEffect, useState } from "react";
 import ViewToys from "../ViewToys/ViewToys";
+import useTitle from "../../hooks/useTitle";
 
 const AllToys = () => {
   const [loading, setLoading] = useState(true);
   const [toys, setToys] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredToys, setFilteredToys] = useState([]);
-
+ useTitle('All Toys')
   useEffect(() => {
     fetch("http://localhost:5000/addtoys")
       .then((res) => res.json())

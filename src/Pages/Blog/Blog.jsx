@@ -1,8 +1,11 @@
+import useTitle from "../../hooks/useTitle";
+
 const Blog = () => {
+  useTitle('Blog')
   return (
     <div className="mt-24 w-full lg:w-5/6 mx-auto">
       <div id="blog-container">
-        <div className="border border-cyan-200 rounded-xl shadow-lg mb-4 p-12">
+        <div className="border border-cyan-200 rounded-xl shadow-lg mb-4 p-12 bg-cyan-50">
           <h2 className="py-6 text-2xl">
             <span className="text-cyan-600 font-bold">Question :</span>
             What is an access token and refresh token? How do they work and
@@ -21,7 +24,7 @@ const Blog = () => {
             prevent unauthorized access.
           </p>
         </div>
-        <div className=" border-cyan-200 rounded-xl shadow-lg mb-4 p-12">
+        <div className=" border-cyan-200 rounded-xl shadow-lg mb-4 bg-cyan-50 p-12">
           <h2 className="py-6 text-2xl">
             <span className="text-cyan-600 font-bold">Question :</span>Compare
             SQL and NoSQL databases?
@@ -42,7 +45,7 @@ const Blog = () => {
             data structure, scalability needs, and performance requirements.
           </p>
         </div>
-        <div className="border border-cyan-200 rounded-xl shadow-lg mb-4 p-12">
+        <div className="border border-cyan-200 rounded-xl bg-cyan-50 shadow-lg mb-4 p-12">
           <h2 className="py-6 text-2xl">
             <span className="text-cyan-600 font-bold">Question :</span>What is
             express js? What is Nest JS ?
@@ -66,7 +69,7 @@ const Blog = () => {
             database integration.
           </p>
         </div>
-        <div className="border border-cyan-200 rounded-xl shadow-lg mb-4 p-12">
+        <div className="border border-cyan-200 rounded-xl bg-cyan-50 shadow-lg mb-4 p-12">
           <h2 className="py-6 text-2xl">
             <span className="text-cyan-600 font-bold">Question :</span>What is
             MongoDB aggregate and how does it work?

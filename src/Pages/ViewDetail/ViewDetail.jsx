@@ -1,10 +1,11 @@
 import { useLoaderData } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
+import useTitle from "../../hooks/useTitle";
 
 const ViewDetail = () => {
   const details = useLoaderData();
   const { price, pictureUrl, name, sellerName, rating, quantity, sellerEmail, description } = details;
-
+  useTitle('Detail')
   return (
     <div className="hero min-h-screen mt-16 py-6 bg-cyan-50">
       <div className="hero-content flex-col lg:flex-row lg:gap-4">

@@ -2,15 +2,15 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Context/AuthProvider";
 import MyToysRow from "../MyToysRow/MyToysRow";
 import swal from "sweetalert";
-
+import useTitle from "../../hooks/useTitle";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
   const [loading, setLoading] = useState(true);
-  
-
-  const url = `http://localhost:5000/addtoys?email=${user?.email}`;
+  const [sortOrder, setSortOrder] = useState("asc");
+ useTitle('My Toys')
+  const url = `http://localhost:5000/addtoys?email=${user?.email}&sort=${sortOrder}`;
 
   useEffect(() => {
     fetch(url)
@@ -24,6 +24,10 @@ const MyToys = () => {
         setLoading(false);
       });
   }, [url]);
+
+  const handleSort = (order) => {
+    setSortOrder(order);
+  };
 
   const handleUpdate = (id, updatedData) => {
     fetch(`http://localhost:5000/addtoys/${id}`, {
@@ -93,6 +97,10 @@ const MyToys = () => {
       <h2 className="text-2xl lg:text-5xl text-cyan-800 font-bold text-center m-6">
         I Added : <span className="text-cyan-500">{myToys.length}</span> <span>Toys</span>
       </h2>
+      <div className="text-center mb-4">
+                <button className="btn btn-outline bg-cyan-200 mr-4" onClick={() => handleSort("asc")}>Price ↑</button>
+        <button className="btn btn-outline bg-cyan-200"  onClick={() => handleSort("desc")}>Price ↓</button>
+      </div>
       <div className="overflow-x-auto w-full">
         <table className="table w-full">
           {/* head */}
@@ -107,6 +115,7 @@ const MyToys = () => {
               <th>Seller</th>
               <th>Update</th>
               
+             
             </tr>
           </thead>
           <tbody>

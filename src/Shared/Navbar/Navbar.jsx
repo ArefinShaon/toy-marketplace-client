@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from '../../assets/toyman_d3aab1e4-a273-4b68-a0c8-9b6f6e6282c2_190x.png'
 import { useContext } from "react";
 import { AuthContext } from "../../Pages/Context/AuthProvider";
@@ -8,12 +8,15 @@ import { FaUser,  } from "react-icons/fa";
 const NavBar = () => {
 
     const {user, logOut} = useContext(AuthContext);
-
+  const navigate = useNavigate();
     const handleLogOut = () => {
-        logOut()
-        .then(() =>{})
-        .catch( error => console.log(error))
-    }
+      logOut()
+        .then(() => {
+          // Redirect to the home page
+          navigate("/");
+        })
+        .catch((error) => console.log(error));
+    };
 
     const navItems = (
         <>

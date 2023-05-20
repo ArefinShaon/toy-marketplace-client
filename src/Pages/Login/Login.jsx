@@ -4,6 +4,8 @@ import { FaGoogle, FaArrowRight} from "react-icons/fa";
 import {  GoogleAuthProvider } from "firebase/auth";
 import swal from 'sweetalert';
 import { AuthContext } from "../Context/AuthProvider";
+import useTitle from "../../hooks/useTitle";
+
 
 
 // For log in section
@@ -12,6 +14,7 @@ const Login = () => {
   const [error, setError] = useState('');
   const { signIn, providerLogin } = useContext(AuthContext);
   const googleProvider = new GoogleAuthProvider();
+  useTitle('Login')
   
   const navigate = useNavigate();
   const location = useLocation();

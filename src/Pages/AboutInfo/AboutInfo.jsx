@@ -1,7 +1,10 @@
 
 import img from "../../assets/slider_01_v3_bf417f92-1b8f-4c2d-aad5-dfc606c855df_1.png";
+import useTitle from "../../hooks/useTitle";
 const AboutInfo = () => {
+  useTitle('About')
   return (
+    
     <div>
       <div className="card w-full lg:w-3/4 lg:h-96 mx-auto bg-cyan-50 shadow-xl image-full m-24">
         <figure>
