@@ -1,3 +1,4 @@
+import About from "../../Pages/About/About";
 import AccordionComponent from "../../Pages/AccordionComponent/AccordionComponent";
 import ShopByCategory from "../../Pages/ShopByCategory/ShopByCategory";
 import Banner from "../Banner/Banner";
@@ -13,6 +14,7 @@ const Home = () => {
             <GallerySection></GallerySection>
             <ShopByCategory></ShopByCategory>
             <AccordionComponent></AccordionComponent>
+            <About></About>
         </div>
     );
 };

@@ -7,11 +7,11 @@ import AddToys from "../Pages/AddToys/AddToys";
 
 import MyToys from "../Pages/MyToys/MyToys";
 import AllToys from "../Pages/Alltoys/AllToys";
-import About from "../Pages/About/About";
 import Blog from "../Pages/Blog/Blog";
 import ViewDetail from "../Pages/ViewDetail/ViewDetail";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import ErrorPage from "../ErrorPage/ErrorPage";
+import AboutInfo from "../Pages/AboutInfo/AboutInfo";
 
 
 const router = createBrowserRouter([
@@ -46,7 +46,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/about',
-                element:<About></About>
+                element:<AboutInfo></AboutInfo>
             },
             {
                 path: '/blog',
