@@ -18,7 +18,7 @@ import {
   
     return (
       <div>
-        <h2 className="text-center text-2xl lg:text-4xl m-4">
+        <h2 className="text-center text-2xl lg:text-4xl m-4 font-bold lg:mt-12">
           Frequently Asked Questions
         </h2>
         <p className="text-center text-cyan-400 mt-4">

@@ -1,5 +1,6 @@
 import About from "../../Pages/About/About";
 import AccordionComponent from "../../Pages/AccordionComponent/AccordionComponent";
+import Extra from "../../Pages/Extra/Extra";
 import ShopByCategory from "../../Pages/ShopByCategory/ShopByCategory";
 import useTitle from "../../hooks/useTitle";
 import Banner from "../Banner/Banner";
@@ -13,9 +14,10 @@ const Home = () => {
     return (
         <div className="mt-12">
             <Banner></Banner>
-            <GallerySection></GallerySection>
             <ShopByCategory></ShopByCategory>
+            <Extra></Extra>
             <AccordionComponent></AccordionComponent>
+            <GallerySection></GallerySection>
             <About></About>
         </div>
     );

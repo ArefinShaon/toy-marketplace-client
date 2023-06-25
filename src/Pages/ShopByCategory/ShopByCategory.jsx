@@ -52,10 +52,12 @@ const ShopByCategory = () => {
   }
 
   return (
-    <div className="m-6">
-      <h1 className="text-2xl lg:text-5xl text-cyan-500 font-bold text-center">
-        Shop by Category
+    <div className="m-6 lg:mt-20">
+      <h1 className="text-2xl lg:text-5xl text-cyan-500 font-bold text-center hover:text-slate-900">
+        You Will ❤️ This
       </h1>
+      <p  className="mx-auto text-center my-6 text-slate-400">We’ve picked few pieces we’re pretty sure you’ll love.
+Check back often and enjoy.</p>
       <div className="mt-6 p-4">
         <div className="bg-cyan-50">
           <div className="tab-list flex align-top justify-center">
