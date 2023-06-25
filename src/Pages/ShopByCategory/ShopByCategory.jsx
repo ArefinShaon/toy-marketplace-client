@@ -94,11 +94,11 @@ Check back often and enjoy.</p>
             ) : (
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {categoryData.map((item, index) => (
-                  <div key={index} className="p-4 rounded-lg border border-cyan-600 hover:border-cyan-800 transform transition-all hover:scale-105">
+                  <div key={index} className="p-4 rounded-lg border  border-cyan-600 hover:border-cyan-800 transform transition-all hover:scale-105">
                     <img
                       src={item.pictureUrl}
                       alt={item.name}
-                      className="w-64 h-64 object-cover rounded-2xl"
+                      className="w-40 h-32  rounded-2xl"
                     />
                     <h3 className="text-xl text-center py-2 font-semibold text-cyan-600 mb-2">
                       {item.name}
@@ -107,26 +107,10 @@ Check back often and enjoy.</p>
                       Price: {item.price} $
                     </p>
                     <div className="flex justify-center gap-8">
-                      <div className="flex justify-normal items-center mb-2">
-                        <span className="text-yellow-500 text-xl  hover:text-cyan-500 font-bold">
-                          Ratings: {item.rating}
-                        </span>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-4 w-4 text-yellow-500  hover:text-cyan-500 ml-1"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M10 1.222l2.822 5.682 6.322.92-4.577 4.48 1.084 6.315L10 15.789l-5.651 2.831 1.084-6.315L.858 7.824l6.322-.92L10 1.222zm0 2.23l-1.919 3.873-4.3.626 3.118 3.06-.737 4.296L10 13.802l3.737 1.956-.737-4.296 3.118-3.06-4.3-.625L10 3.453z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                      </div>
+                      
                       <Link
                         to={`/detail/${item._id}`}
-                        className="btn btn-outline bg-cyan-200"
+                        className="btn btn-sm btn-outline bg-cyan-200"
                       >
                         View Detail
                       </Link>
