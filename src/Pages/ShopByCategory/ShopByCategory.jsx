@@ -94,7 +94,7 @@ Check back often and enjoy.</p>
             ) : (
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {categoryData.map((item, index) => (
-                  <div key={index} className="p-4 border rounded-lg">
+                  <div key={index} className="p-4 rounded-lg border border-cyan-600 hover:border-cyan-800 transform transition-all hover:scale-105">
                     <img
                       src={item.pictureUrl}
                       alt={item.name}
